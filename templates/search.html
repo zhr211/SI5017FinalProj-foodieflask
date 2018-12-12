@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css"
+  href="{{ url_for('static', filename='style1.css') }}"/>
+
+<h1 align="center">Hello Friends, welcome to Foodie Saviour!</h1>
+
+<form action="/r" method="POST">
+  <p align="center">Location: <input type="text" name='location'></p>
+  <p align="center">Category: <input type="text" name='category'></p>
+  <p align="center">Number: <input type="text" name='number'></p>
+  <p align="center">
+    <button type="submit"  style="background-color:gray;height:40px;;width:100px">Let's Find Food</button>
+  </p>
+</form>
+<p>
+{% for i in range(5) %}
+    <img src="/static/1.png" height=280/ align="middle">
+{% endfor %}
+</p>
+<p>
+  <img src="/static/food1.jpg" height=200/ align="middle">
+  <img src="/static/food2.jpg" height=200/ align="middle">
+  <img src="/static/food3.jpg" height=200/ align="middle">
+  <img src="/static/food4.jpg" height=200/ align="middle">
+</p>
+
+
+<p><a href="/add">Add a message</a></p>
+
+{% for e in entries %}
+    <div class="entry">
+      <form action="/modify" method="POST">
+        <a class="entrytext"> {{e['text']}} </a>
+        <a><textarea name="new_message" rows=3 cols=50></textarea><input type="submit" value="modify"></a>
+        <a class="metadata"> by {{e['author']}} on {{e['timestamp']}} </a>
+        <input type="hidden" name="id" value= {{e['id']}}>
+      </form>
+      <form action="/delete" method="POST">
+          <!-- <p class="metadata"> id:{{e['id']}} </p> -->
+          <a class="metadata"><input type="hidden" name="id" value= {{e['id']}} >id:{{e['id']}}</a>
+        <a><input type="submit" value="X"/></a>
+       </form>
+    </div>
+{% endfor %}
+
+<p>
+  <img src="/static/2.png" align="middle" height=40/>
+</p>

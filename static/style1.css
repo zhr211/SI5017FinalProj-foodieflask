@@ -1,0 +1,49 @@
+
+/* style.css */
+
+body
+{
+background-image:url('/static/img/vintage.gif');
+}
+
+h1 {
+    color: black;
+    font-family: Helvetica;
+    font-size: 44;
+    text-align: center;
+}
+
+p {
+    font-family: Helvetica;
+    font-size: 30;
+    text-align: center;
+}
+
+li {
+    color: yellow;
+    font-family: monospace;
+    text-align: center;
+}
+
+table {
+    margin: 0px auto;
+}​
+
+.entry {
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    width: 600px;
+}
+
+.entrytext {
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 16;
+}
+
+.metadata {
+    font-family: monospace;
+    font-size: 12;
+    padding-left: 30;
+}

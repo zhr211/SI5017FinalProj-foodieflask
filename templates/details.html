@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}"/>
+
+<form action="/details2" method="POST">
+  <p align="center">Food you want to know: <input type="text" name='detail'></p>
+  <p align="center">
+    <button type="submit"  style="background-color:gray;height:40px;;width:100px">Let's know Food</button>
+  </p>
+</form>
+
+
+<table border=1>
+    <tr>
+        <th>Category</th>
+        <th>Recommend Search</th>
+    </tr>
+{% for name in search_dict %}
+    <tr>
+        <th> {{ name }} </th>
+        <td> {{ search_dict[name] }} </td>
+    </tr>
+{% endfor %}
+</table>

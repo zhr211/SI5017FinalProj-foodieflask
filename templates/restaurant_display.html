@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}"/>
+<p>
+  <img src="/static/5.jpg" width=600 height=300/ align="middle">
+</p>
+<h1 align="center">Welcome to {{city}}!</h1>
+
+<p>
+  Today is {{weather_condition}} day,Temperature is {{temp}}℃, Wind speed is {{wind}} m/s, Please check the weather and plan accordingly
+</p>
+
+<p>
+<a href='http://127.0.0.1:5000/rs/plot' color='red' align="middle"> MAP </a>
+</p>
+
+<form action="/rs" method="POST" align="middle">
+    Sort By:<br/>
+    <input type="radio" name="sortby" value="Ratings"/> Ratings <br/>
+    <input type="radio" name="sortby" value="Price"/> Price <br/>
+    <br/>
+    Sort Order:<br/>
+    <input type="radio" name="sortorder" value="asc"/> Ascending <br/>
+    <input type="radio" name="sortorder" value="desc"/> Descending <br/>
+    <br/>
+    <input type="submit" name="update" value="Update"/>
+    <br/>
+    <br/>
+</form>
+
+<table border=1>
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Ratings</th>
+        <th>Price</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Category</th>
+        <th>Image</th>
+    </tr>
+{% for j in res_list %}
+    <tr>
+        <td>{{j[0]}}</td>
+        <td>{{j[1]}}</td>
+        <td>{{j[2]}}</td>
+        <td>{{j[3]}}</td>
+        <td>{{j[4]}}</td>
+        <td><a href="http://127.0.0.1:5000/details">{{j[5]}}</td>
+        <td><a href={{j[6]}}> click </a></td>
+    </tr>
+{% endfor %}
+</table>

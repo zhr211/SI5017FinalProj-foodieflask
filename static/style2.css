@@ -1,0 +1,31 @@
+
+/* style.css */
+
+body
+{
+background-image:url('/static/img/food_his.gif');
+}
+
+h1 {
+    color: black;
+    font-family: Helvetica;
+    font-size: 44;
+    text-align: center;
+}
+
+p {
+    font-family: Helvetica;
+    font-size: 30;
+    text-align: center;
+}
+
+li {
+    color: yellow;
+    font-family: monospace;
+    text-align: center;
+}
+
+table {
+    margin: 0px auto;
+    background: rgba(255,255,255,1);
+}​
